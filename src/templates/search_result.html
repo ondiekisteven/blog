@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+  <!-- head -->
+
+{% block content %}
+{% load static %}
+  <div class="widget latest-posts">
+    <header>
+      <h3 class="h2">The following posts match your search</h3>
+    </header>
+    <div class="blog-posts">
+    {% for post in query_set %}
+      <a href="{{post.get_absolute_url}}">
+        <div class="item d-flex align-items-center">
+          <div class="image"><img src="{{post.thumbnail.url}}" alt="..." class="img-fluid"></div>
+          <div class="title"><strong>{{post.title}}</strong>
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+    </div>
+  </div>
+
+
+
+{% endblock content %}
