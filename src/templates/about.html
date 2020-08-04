@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block content %}
+    <section style="background: url({% static 'img/ocharo.jpg' %}); background-size: cover; background-position: center center" class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <h1>About Hon. Luka Ocharo </h1>
+                </div>
+            </div><a href=".intro" class="continue link-scroll"><i class="fa fa-long-arrow-down"></i> Scroll Down</a>
+        </div>
+    </section>
+
+{#  INTRODUCTION SECTION  #}
+    <section class="intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="h3">Hon. Evans Moses Luka Ocharo</h2>
+                    <p class="text-big">Aspiring candidate for <strong>MCA Bokimonge Ward</strong> 2022 in Bomachoge Borabu Constituency, Kenyenya sub-county, Kisii County.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-posts no-padding-top">
+        <div class="container">
+            <div class="row d-flex align-items-stretch">
+{#                <div class="image col-lg-5"><img src="{% static 'img/hero.jpg' %}" alt="..."></div>#}
+                <div class="text col-lg-7">
+                    <h2 class="heading-medium text-center">MANIFESTO</h2>
+                    <ul class="list-group-horizontal-lg">
+                        <li class="list-group-item text-big">To Provide clean water and sanitation</li>
+                        <li class="list-group-item text-big">To provide health care by initiating sponsored hospital within the ward</li>
+                        <li class="list-group-item text-big">Education for all (Enhance formal education and TVET to vulnerable)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: url({% static 'img/divider-bg.jpg' %}); background-size: cover; background-position: center bottom" class="divider">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <h2>HON. LUKA OCHARO'S CURRENT STATUS</h2><a href="#current_status" class="hero-link">View</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-posts no-padding-top" id="current_status">
+        <div class="container">
+            <div class="row d-flex align-items-stretch">
+{#                                <div class="image col-lg-5"><img src="{% static 'img/hero.jpg' %}" alt="..."></div>#}
+                <div class="text col-lg-7">
+                    <ul class="list-group-horizontal-lg">
+                        <li class="list-group-item text-big">Retired teacher holding Diploma in Education.</li>
+                        <li class="list-group-item text-big">An active philanthropist and a global citizen.</li>
+                        <li class="list-group-item text-big">Adviser to Manono Women Self Help Group and other community-based organizations</li>
+                        <li class="list-group-item text-big">Director of JOOMA Junior Academy school (closed)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

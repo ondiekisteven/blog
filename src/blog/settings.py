@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tinymce',
     'post',
-    'marketing'
+    'marketing',
+    'event'
 ]
 
 MIDDLEWARE = [
@@ -119,16 +120,17 @@ USE_TZ = True
 
 # tinymce
 TINYMCE_DEFAULT_CONFIG = {
-    'height':360,
+    'height': 360,
     'width': 1120,
-    'selector':'textarea',
-    'plugins': "table,spellchecker,paste,searchreplace,preview,codesample,contextmenu,media,save,table,code,lists,fullscreen,insertdatetime,nonbreaking,directionality,wordcount,visualchars,pagebreak",
+    'selector': 'textarea',
+    'plugins': "table,spellchecker,paste,searchreplace,preview,codesample,contextmenu,media,save,table,code,lists,"
+               "fullscreen,insertdatetime,nonbreaking,directionality,wordcount,visualchars,pagebreak",
     'theme': "advanced",
     'cleanup_on_startup': True,
     'custom_undo_redo_levels': 20,
     'contextmenu': 'formats | link image',
-    'menubar':True,
-    'statusbar':True,
+    'menubar': True,
+    'statusbar': True,
 
 }
 TINYMCE_SPELLCHECKER = True

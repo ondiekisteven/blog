@@ -20,7 +20,7 @@
     <a href="{{post.get_absolute_url}}">
       <div class="item d-flex align-items-center">
         <div class="image"><img src="{{post.thumbnail.url}}" alt="..." class="img-fluid"></div>
-        <div class="title"><strong>{{post.title}}</strong>
+        <div class="title"><strong>{{post.overview}}</strong>
           <div class="d-flex align-items-center">
             <div class="views"><i class="icon-eye"></i>{{post.view_count}}</div>
             <div class="comments"><i class="icon-comment"></i>{{post.comment_count}}</div>
@@ -31,15 +31,7 @@
     {% endfor %}
   </div>
 </div>
-<!-- Widget [Categories Widget]-->
-<div class="widget categories">
-  <header>
-    <h3 class="h6">Categories</h3>
-  </header>
-  {% for cat in category_count %}
-  <div class="item d-flex justify-content-between"><a href="#">{{cat.categories__title}}</a><span>{{cat.categories__title__count}}</span></div>
-  {% endfor %}
-</div>
+
 <!-- Widget [Tags Cloud Widget]-->
 <div class="widget tags">
   <header>
@@ -49,6 +41,5 @@
     {% for cat in category_count %}
       <li class="list-inline-item"><a href="?q={{cat.categories__title}}" class="tag">#{{cat.categories__title}}</a></li>
     {% endfor %}
-
   </ul>
 </div>

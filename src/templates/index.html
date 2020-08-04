@@ -1,15 +1,17 @@
 {% extends "base.html" %}
   <!-- head -->
-
+{% block title %}
+Home
+{% endblock %}
 {% block content %}
 {% load static %}
-
     <!-- Hero Section-->
-    <section style="background: url({% static 'img/hero.jpg' %}); background-size: cover; background-position: center center" class="hero">
+    <section style="background: url({% static 'img/ocharo.jpg' %}); background-size: cover; background-position: center center" class="hero">
       <div class="container">
         <div class="row">
           <div class="col-lg-7">
-            <h1>Steven's Education Blog</h1><a href="#" class="hero-link">Discover More</a>
+            <h1>Hon. Evans Moses Luka Ocharo </h1>
+              <span>Aspiring candidate for MCA Bokimonge ward.</span>
           </div>
         </div><a href=".intro" class="continue link-scroll"><i class="fa fa-long-arrow-down"></i> Scroll Down</a>
       </div>
@@ -19,8 +21,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8">
-            <h2 class="h3">Some great intro here</h2>
-            <p class="text-big">Place a nice <strong>introduction</strong> here <strong>to catch reader's attention</strong>. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderi.</p>
+            <h2 class="h3">About Luka Ocharo</h2>
+            <p class="text-big">Aspiring candidate for <strong>MCA Bokimonge Ward</strong> 2022 in Bomachoge Borabu Constituency, Kenyenya sub-county, Kisii County.</p>
+              <a href="#" class="hero-link">Discover More</a>
           </div>
         </div>
       </div>
@@ -78,8 +81,8 @@
     <section class="latest-posts">
       <div class="container">
         <header>
-          <h2>Latest from the blog</h2>
-          <p class="text-big">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <h2>Latest from the event</h2>
+          <p class="text-big">These are the latest events posted</p>
         </header>
         <div class="row">
           {% for post in latest %}
@@ -136,7 +139,4 @@
         {% endfor %}
       </div>
     </section>
-    <!-- footer -->
-
-    <!-- JavaScript files-->
     {% endblock content %}

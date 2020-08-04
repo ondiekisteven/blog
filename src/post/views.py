@@ -5,24 +5,22 @@ from marketing.models import Signup
 from django.db.models import Count, Q
 
 
-def get_category_count():
-    query_set = Post.objects.values('categories__title').annotate(Count('categories__title'))
-    return query_set
-
-
 def search(request):
     query = request.GET.get('q')
     query_set = Post.objects.all().order_by('-pk')
 
     if query:
         query_set = query_set.filter(
-            Q(title__icontains=query) |
             Q(overview__icontains=query)
         ).distinct()
     context = {
-        'query_set':query_set
+        'query_set': query_set
     }
     return render(request, 'search_result.html', context)
+
+
+def about(request):
+    return render(request, 'about.html')
 
 
 def index(request):
@@ -44,19 +42,15 @@ def index(request):
 
 def post(request, id):
     query_set = Post.objects.all().filter(id=id)
-    category_count = get_category_count()
     latest = Post.objects.all().order_by('-timestamp')[0:3]
     context = {
         'post':query_set,
         'latest':latest,
-        'category_count':category_count
-
     }
     return render(request, 'post.html', context)
 
 
 def blog(request):
-    category_count = get_category_count()
     querySet = Post.objects.all().order_by('-pk')
     latest = Post.objects.all().order_by('-timestamp')[0:3]
     paginator = Paginator(querySet, 4)
@@ -71,7 +65,6 @@ def blog(request):
     context = {
         'object_list' : paginated_query,
         'latest': latest,
-        'requested_page_var': requested_page_var,
-        'category_count':category_count
+        'requested_page_var': requested_page_var
     }
     return render(request, 'blog.html', context)
