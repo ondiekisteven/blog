@@ -4,15 +4,13 @@ from django.contrib import admin
 from django.urls import path, include
 
 from post.views import search, index, blog, post, about
-from event.views import event
 
 urlpatterns = [
     path('', index, name="post-home"),
     path('about/', about, name="about"),
     path('admin/', admin.site.urls),
     path('search/', search, name="search"),
-    path('blog/', blog, name="post-list"),
-    path('events/', event, name="event"),
+    path('events/', blog, name="events"),
     path('post/<id>/', post, name="post-detail"),
     path('tinymce/', include('tinymce.urls'))
 
